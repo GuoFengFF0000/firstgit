@@ -30,4 +30,9 @@ public class UserServiceImpl implements UserService {
     public Boolean del(int id) {
         return ud.del(id);
     }
+
+    @Override
+    public int insert(User user) {
+        return ud.insert(user);
+    }
 }

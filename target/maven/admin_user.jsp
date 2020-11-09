@@ -25,7 +25,8 @@
                     <th>用户姓名</th>
                     <th>用户性别</th>
                     <th>用户邮件</th>
-                    <th>操作</th>
+                    <th>操 作</th>
+
                 </tr>
                 <c:forEach var="user" items="${user}">
                     <tr>
@@ -36,6 +37,9 @@
                         <th><a href="/selectOne?id=${user.id}">update</a>|<a href="/deleteById?id=${user.id}">del</a></th>
                     </tr>
                 </c:forEach>
+                <tr>
+                    <th><a href="insert.jsp">新增</a></th>
+                </tr>
             </table>
         </div>
     </div>

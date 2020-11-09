@@ -13,4 +13,6 @@ public interface UserService {
     Boolean update(User user);
 
     Boolean del(int id);
+
+    int insert(User user);
 }

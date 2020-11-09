@@ -184,4 +184,39 @@ public class UserDaoImpl implements UserDao {
         }
         return null;
     }
+
+    @Override
+    public int insert(User user) {
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try{
+            Class.forName("com.mysql.jdbc.Driver");
+            //创建 连接
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mishop?useUnicode=true&characterEncoding=utf8", "root", "root");
+            //创建连接对象
+            //sql的编写
+            String sql = "insert into users values (null,?,?,?)";
+
+            ps = conn.prepareStatement(sql);
+
+            ps.setObject(1,user.getName());
+            ps.setObject(2,user.getGender());
+            ps.setObject(3,user.getEmail());
+
+            return ps.executeUpdate();
+
+        }catch (Exception e){
+            e.printStackTrace();
+        } finally {
+            try {
+                ps.close();
+                conn.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+        return 0;
+    }
 }
