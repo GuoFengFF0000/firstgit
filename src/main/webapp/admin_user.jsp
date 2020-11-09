@@ -25,7 +25,7 @@
                     <th>用户姓名</th>
                     <th>用户性别</th>
                     <th>用户邮件</th>
-                    <th>操作</th>
+                    <th>操 作</th>
                 </tr>
                 <c:forEach var="user" items="${user}">
                     <tr>
